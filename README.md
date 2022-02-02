@@ -27,14 +27,13 @@
 | category_id                | integer             | null: false                    |
 | condition_id               | integer             | null: false                    |
 | shipping_charges_burden_id | integer             | null: false                    |
-| shipping_area_id           | integer             | null: false                    |
-| shipping_days_id           | integer             | null: false                    |
+| prefecture_id              | integer             | null: false                    |
+| shipping_day_id            | integer             | null: false                    |
 | price                      | integer             | null: false                    |
 | user                       | references          | null: false, foreign_key: true |
 
 ### Association
 
-* has_many :shipping_addresses
 * has_one :purchase_record
 * belongs_to :user
 
@@ -56,7 +55,7 @@
 | Column                  | Type                | Options                        |
 |-------------------------|---------------------|--------------------------------|
 | postcode                | string              | null: false                    |
-| prefecture_id           | string              | null: false                    |
+| prefecture_id           | integer             | null: false                    |
 | municipalities          | string              | null: false                    |
 | address                 | string              | null: false                    |
 | building_name           | string              |                                |
@@ -66,4 +65,3 @@
 ### Association
 
 * belongs_to :purchase_record
-* belongs_to :item
