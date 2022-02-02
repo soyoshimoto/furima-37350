@@ -6,7 +6,10 @@
 |--------------------|---------------------|---------------------------|
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
-| name               | string              | null: false               |
+| lastname           | string              | null: false               |
+| firstname          | string              | null: false               |
+| lastname_ruby      | string              | null: false               |
+| firstname_ruby     | string              | null: false               |
 | nickname           | string              | null: false               |
 | birthday           | date                | null: false               |
 
@@ -17,16 +20,17 @@
 
 ## items table
 
-| Column                  | Type                | Options                        |
-|-------------------------|---------------------|--------------------------------|
-| image                   | string              | null: false                    |
-| items_name              | text                | null: false                    |
-| explanation             | text                | null: false                    |
-| category                | string              | null: false                    |
-| condition               | string              | null: false                    |
-| shipping_charges_burden | text                | null: false                    |
-| price                   | string              | null: false                    |
-| user_id                 | references          | null: false, foreign_key: true |
+| Column                     | Type                | Options                        |
+|----------------------------|---------------------|--------------------------------|
+| items_name                 | string              | null: false                    |
+| explanation                | text                | null: false                    |
+| category_id                | integer             | null: false                    |
+| condition_id               | integer             | null: false                    |
+| shipping_charges_burden_id | integer             | null: false                    |
+| shipping_area_id           | integer             | null: false                    |
+| shipping_days_id           | integer             | null: false                    |
+| price                      | integer             | null: false                    |
+| user                       | references          | null: false, foreign_key: true |
 
 ### Association
 
@@ -38,8 +42,8 @@
 
 | Column                  | Type                | Options                        |
 |-------------------------|---------------------|--------------------------------|
-| user_id                 | references          | null: false, foreign_key: true |
-| item_id                 | references          | null: false, foreign_key: true |
+| user                    | references          | null: false, foreign_key: true |
+| item                    | references          | null: false, foreign_key: true |
 
 ### Association
 
@@ -52,13 +56,12 @@
 | Column                  | Type                | Options                        |
 |-------------------------|---------------------|--------------------------------|
 | postcode                | string              | null: false                    |
-| prefecture              | string              | null: false                    |
+| prefecture_id           | string              | null: false                    |
 | municipalities          | string              | null: false                    |
 | address                 | string              | null: false                    |
-| buildingname            | string              | null: false                    |
+| building_name           | string              |                                |
 | phonenumber             | string              | null: false                    |
-| item_id                 | references          | null: false, foreign_key: true |
-| purchaserecord_id       | references          | null: false, foreign_key: true |
+| purchase_record          | references          | null: false, foreign_key: true |
 
 ### Association
 
