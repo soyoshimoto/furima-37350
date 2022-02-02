@@ -41,17 +41,17 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="15" style="edgeStyle=none;html=1;fontSize=15;endSize=37;" edge="1" parent="1" source="3">
+                <mxCell id="15" style="edgeStyle=none;html=1;fontSize=15;endSize=37;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="3">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="530" y="125" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16" style="edgeStyle=none;html=1;fontSize=15;endSize=37;" edge="1" parent="1" source="5">
+                <mxCell id="16" style="edgeStyle=none;html=1;fontSize=15;endSize=37;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="5">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="630" y="360" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" style="edgeStyle=none;html=1;fontSize=15;endSize=37;" edge="1" parent="1" source="3">
+                <mxCell id="17" style="edgeStyle=none;html=1;fontSize=15;endSize=37;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="3">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="135" y="350" as="targetPoint"/>
                     </mxGeometry>
