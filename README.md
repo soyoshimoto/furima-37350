@@ -1,24 +1,66 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column             | Type                | Options                   |
+|--------------------|---------------------|---------------------------|
+| email              | string              | null: false, unique: true |
+| encrypted_password | string              | null: false               |
+| name               | string              | null: false               |
+| nickname           | string              | null: false               |
+| birthday           | date                | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+* has_many :items
+* has_many :purchase_records
 
-* Configuration
+## items table
 
-* Database creation
+| Column                  | Type                | Options                        |
+|-------------------------|---------------------|--------------------------------|
+| image                   | string              | null: false                    |
+| items_name              | text                | null: false                    |
+| explanation             | text                | null: false                    |
+| category                | string              | null: false                    |
+| condition               | string              | null: false                    |
+| shipping_charges_burden | text                | null: false                    |
+| price                   | string              | null: false                    |
+| user_id                 | references          | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+* has_many :shipping_addresses
+* has_one :purchase_record
+* belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## purchase_records table
 
-* Deployment instructions
+| Column                  | Type                | Options                        |
+|-------------------------|---------------------|--------------------------------|
+| user_id                 | references          | null: false, foreign_key: true |
+| item_id                 | references          | null: false, foreign_key: true |
 
-* ...
+### Association
+
+* has_one :shipping_address
+* belongs_to :user
+* belongs_to :item
+
+## shipping_addresses table
+
+| Column                  | Type                | Options                        |
+|-------------------------|---------------------|--------------------------------|
+| postcode                | string              | null: false                    |
+| prefecture              | string              | null: false                    |
+| municipalities          | string              | null: false                    |
+| address                 | string              | null: false                    |
+| buildingname            | string              | null: false                    |
+| phonenumber             | string              | null: false                    |
+| item_id                 | references          | null: false, foreign_key: true |
+| purchaserecord_id       | references          | null: false, foreign_key: true |
+
+### Association
+
+* belongs_to :purchase_record
+* belongs_to :item
