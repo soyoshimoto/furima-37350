@@ -61,7 +61,7 @@
 | address                 | string              | null: false                    |
 | building_name           | string              |                                |
 | phonenumber             | string              | null: false                    |
-| purchase_record          | references          | null: false, foreign_key: true |
+| purchase_record         | references         | null: false, foreign_key: true |
 
 ### Association
 
