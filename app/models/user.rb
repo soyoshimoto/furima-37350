@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :firstname, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}
     validates :lastname, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/}
     validates :firstname_ruby, format: {with: /\A[ァ-ヶー－]+\z/}
-    validates :lastname_ruby, format: {with: /\A[ぁ-んァ-ン一-龥]/}
+    validates :lastname_ruby, format: {with: /\A[ァ-ヶー－]+\z/}
     validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
   end
 end
