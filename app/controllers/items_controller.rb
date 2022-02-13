@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   def upadate
     item = Item.find(params[:id])
     item.update(item_params)
+  end
 
   private
   def item_paramas
